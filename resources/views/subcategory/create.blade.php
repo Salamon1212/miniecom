@@ -4,7 +4,7 @@
     <div class="subcategory-title">
         <h1>Add SubCategory</h1>
     </div>
-    <form action="{{route('subcategory.store')}}" method="post">
+    <form action="{{route('subcategory.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
         <div align="center" style="margin: 10px">

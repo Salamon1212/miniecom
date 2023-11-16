@@ -5,7 +5,7 @@
     <div class="category-section">
         @foreach ($cat_data as $row)
         <li style="list-style: none">
-            <a href=""><img src="{{ asset('/images/'.$row->category_img) }}" alt=""></a>
+            <a href=""><img src="{{ asset('storage/uploads/'.$row->category_img) }}" alt=""></a>
         </li>
         @endforeach
     </div>
@@ -15,7 +15,7 @@
     <div class="subcategory-section">
         @foreach ($subcat_data as $rows)
         <li style="list-style: none">
-            <a href=""><img src="{{ asset('/images/'.$rows->subcategory_img) }}" alt=""></a>
+            <a href=""><img src="{{ asset('storage/uploads/'.$rows->subcategory_img) }}" alt=""></a>
         </li>
         @endforeach
     </div>

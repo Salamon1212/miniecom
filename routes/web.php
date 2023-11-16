@@ -72,8 +72,6 @@ Route::post('add/subcategory',[SubCategoryController::class,'store'])->name('sub
 Route::get('add/product',[ProductController::class,'create'])->name('product.add');
 Route::post('add/product',[ProductController::class,'store'])->name('product.store');
 
-//orders
-Route::get('list/order',[OrderController::class,'show'])->name('list.order');
 
 
 

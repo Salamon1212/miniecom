@@ -47,10 +47,13 @@ class CategoryController extends Controller
             'category_img' => 'required',
         ]);
 
+        $file = $request->file('category_img');
+        $fileName = $file->getClientOriginalName();
         $category = Category::create([
             'category_name' => $request->get('category_name'),
-            'category_img' => $request->get('category_img'),
+            'category_img' => $fileName,
         ]);
+        $filepath = $file->storeAs('uploads',$fileName, 'public');
         if($category){
             return redirect('add/category')->with('success','successfully added the category');
         }else{

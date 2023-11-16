@@ -38,14 +38,14 @@ class SubCategoryController extends Controller
             'subcategory_name' => 'required',
             'subcategory_img' => 'required',
         ]);
-
+        $file = $request->file('subcategory_img');
+        $fileName = $file->getClientOriginalName();
         $subCategory = SubCategory::create([
             'subcategory_id' => $request->get('subcategory_id'),
             'subcategory_name' => $request->get('subcategory_name'),
-            'subcategory_img' => $request->get('subcategory_img'),
-
-
+            'subcategory_img' => $fileName,
         ]);
+        $filepath = $file->storeAs('uploads',$fileName, 'public');
         if($subCategory){
             return redirect('add/subcategory')->with('success','successfully added the subcategory');
         }else{
